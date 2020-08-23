@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attendances",
+  "info": {
+    "name": "Attendance"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Attendance": {
+      "type": "boolean"
+    },
+    "place": {
+      "model": "place",
+      "via": "attendances"
+    }
+  }
+}

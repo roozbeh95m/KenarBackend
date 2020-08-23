@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "places",
+  "info": {
+    "name": "place"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "unique": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "placeImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "gallery": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "categories": {
+      "collection": "category",
+      "via": "places"
+    },
+    "routes": {
+      "collection": "route",
+      "via": "places"
+    },
+    "address": {
+      "type": "text"
+    },
+    "latitude": {
+      "type": "float",
+      "required": true
+    },
+    "longitude": {
+      "type": "float",
+      "required": true
+    },
+    "phone": {
+      "type": "integer"
+    },
+    "website": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "integer"
+    },
+    "active": {
+      "type": "boolean",
+      "required": true
+    },
+    "comments": {
+      "via": "place",
+      "collection": "comment"
+    },
+    "rates": {
+      "via": "place",
+      "collection": "rates"
+    },
+    "attendances": {
+      "via": "place",
+      "collection": "attendance"
+    }
+  }
+}

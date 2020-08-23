@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "routes",
+  "info": {
+    "name": "route"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "places": {
+      "via": "routes",
+      "collection": "place",
+      "dominant": true
+    },
+    "distance": {
+      "type": "richtext",
+      "required": true
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "time": {
+      "required": true,
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "followers",
+  "info": {
+    "name": "followers"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "users": {
+      "via": "followers",
+      "plugin": "users-permissions",
+      "collection": "user",
+      "dominant": true
+    }
+  }
+}

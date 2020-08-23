@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rates",
+  "info": {
+    "name": "rates"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "rateNumber": {
+      "type": "integer",
+      "required": true,
+      "max": 5,
+      "min": -4
+    },
+    "place": {
+      "model": "place",
+      "via": "rates"
+    }
+  }
+}
